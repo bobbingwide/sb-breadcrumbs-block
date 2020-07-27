@@ -1,4 +1,4 @@
-=== SB Breadcumbs block ===
+=== SB Breadcrumbs block ===
 Contributors:      bobbingwide
 Tags:              block, breadcrumbs, link
 Requires at least: 5.4.2
