@@ -1,0 +1,34 @@
+# Copyright (C) 2020 SB Breadcrumbs block
+# This file is distributed under the same license as the SB Breadcrumbs block package.
+msgid ""
+msgstr ""
+"Project-Id-Version: SB Breadcrumbs block 0.4.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/sb-breadcrumbs-block\n"
+"POT-Creation-Date: 2020-07-27 11:00:54+00:00\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Language: bb_BB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+#: sb-breadcrumbs-block.php:96
+msgid "Home"
+msgstr "Hmoe"
+
+
+#. Plugin Name of the plugin/theme
+msgid "SB Breadcrumbs block"
+msgstr "SB Berdarcmubs bolck"
+
+
+#. Description of the plugin/theme
+msgid "Show breadcrumbs to the current content as links"
+msgstr "Sohw berdarcmubs tO thE cruernt cnoetnt As lniks"
+
+
+#. Author of the plugin/theme
+msgid "bobbingwide"
+msgstr "bboibgniwde"
+
