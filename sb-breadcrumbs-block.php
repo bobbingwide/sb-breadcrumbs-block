@@ -1,12 +1,15 @@
 <?php
 /**
  * Plugin Name:     SB Breadcrumbs block
+ * Plugin URI: 		https://www.oik-plugins.com/oik-plugins/sb-breadcrumbs-block
  * Description:     Show breadcrumbs to the current content as links
  * Version:         0.4.0
  * Author:          bobbingwide
+ * Author URI: 		https://www.bobbingwide.com/about-bobbing-wide
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     sb-breadcrumbs-block
+ *
  *
  * @package         sb-breadcrumbs-block
  */
@@ -35,7 +38,11 @@ function sb_breadcrumbs_block_block_init() {
 		$script_asset['version']
 	);
 
-	wp_set_script_translations( 'sb-breadcrumbs-block-block-editor', 'sb-breadcrumbs-block' );
+	/*
+	 * Localise the script by loading the required strings for the build/index.js file
+	 * from the locale specific .json file in the languages folder
+	 */
+	$ok = wp_set_script_translations( 'sb-breadcrumbs-block-block-editor', 'sb-breadcrumbs-block' , $dir .'/languages'  );
 
 	$editor_css = 'build/index.css';
 	wp_register_style(
@@ -62,18 +69,23 @@ function sb_breadcrumbs_block_block_init() {
 			'className' => [ 'type' => 'string'],
 		]
 	) );
+
 }
 add_action( 'init', 'sb_breadcrumbs_block_block_init' );
 
 function sb_breadcrumbs_block_dynamic_block( $attributes ) {
+	load_plugin_textdomain( 'sb-breadcrumbs-block', false, 'sb-breadcrumbs-block/languages' );
+	$color = __( 'color', 'sb-breadcrumbs-block');
+	$html = null;
 	if ( function_exists( 'yoast_breadcrumb') ) {
 		$html = yoast_breadcrumb( '<p id=breadcrumbs', '</p>', false );
 		if ( !$html ) {
-			$html = "Please configure Yoast SEO breadcrumbs";
+			//$html = __( "Please configure Yoast SEO breadcrumbs. ", 'sb-breadcrumbs-block' );
 		}
-	} else {
-		$html = sb_breadcrumbs_block_dynamic_block_internal( $attributes );
+	}
 
+	if ( !$html ) {
+		$html = sb_breadcrumbs_block_dynamic_block_internal( $attributes );
 	}
 	return $html;
 

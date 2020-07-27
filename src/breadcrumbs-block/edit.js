@@ -30,7 +30,8 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function edit ( { attributes, className, isSelected, setAttributes } )   {
-
+	const color = __( 'color', 'sb-breadcrumbs-block');
+	var col = color;
 	return (
 		<Fragment>
 			<ServerSideRender
