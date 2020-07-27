@@ -1,29 +1,52 @@
-# Copyright (C) 2020 SB Breadcrumbs block
-# This file is distributed under the same license as the SB Breadcrumbs block package.
+# Copyright (C) 2020 bobbingwide
+# This file is distributed under the same license as the SB Breadcrumbs block plugin.
 msgid ""
 msgstr ""
 "Project-Id-Version: SB Breadcrumbs block 0.4.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/sb-breadcrumbs-block\n"
-"POT-Creation-Date: 2020-07-27 11:00:54+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sb-breadcrumbs-block\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2020-07-27T21:32:04+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: sb-breadcrumbs-block\n"
 
-#: sb-breadcrumbs-block.php:96
-msgid "Home"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
+#. Plugin Name of the plugin
 msgid "SB Breadcrumbs block"
 msgstr ""
 
-#. Description of the plugin/theme
+#. Plugin URI of the plugin
+msgid "https://www.oik-plugins.com/oik-plugins/sb-breadcrumbs-block"
+msgstr ""
+
+#. Description of the plugin
 msgid "Show breadcrumbs to the current content as links"
 msgstr ""
 
-#. Author of the plugin/theme
+#. Author of the plugin
 msgid "bobbingwide"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.bobbingwide.com/about-bobbing-wide"
+msgstr ""
+
+#: sb-breadcrumbs-block.php:78
+#: build/index.js:229
+msgid "color"
+msgstr ""
+
+#: sb-breadcrumbs-block.php:108
+msgid "Home"
+msgstr ""
+
+#: build/index.js:307
+msgid "Breadcrumbs block"
+msgstr ""
+
+#: build/index.js:313
+msgid "Show breadcrumbs of the current content as a link."
 msgstr ""
