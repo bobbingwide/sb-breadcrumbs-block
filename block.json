@@ -1,0 +1,14 @@
+{
+	"name": "sb/breadcrumbs-block",
+	"title": "Breadcrumbs block",
+	"category": "widgets",
+	"icon": "link",
+	"description": "Display a lt.",
+	"textdomain": "sb-parent-block",
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
