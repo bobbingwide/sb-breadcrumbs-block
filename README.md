@@ -4,15 +4,15 @@
 * Tags:              block, breadcrumbs, link, Yoast
 * Requires at least: 5.4.2
 * Tested up to:      5.4.2
-* Stable tag:        0.5.0
+* Stable tag:        0.5.1
 * Requires PHP:      7.2.0
 * License:           GPL-2.0-or-later
 * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Show Breadcrumb links to the current content.
+Show breadcrumb links to the current content.
 
 ## Description 
-Use the Breadcrumbs block ( sb/breadcrumbs-block ) to display links to the current content as a breadcrumb trail.
+Use the Breadcrumbs block ( sb/breadcrumbs-block ) to display links to the current content in a breadcrumb trail.
 
 ## Installation 
 
@@ -20,7 +20,7 @@ Use the Breadcrumbs block ( sb/breadcrumbs-block ) to display links to the curre
 1. Activate the plugin through the 'Plugins' screen in WordPress
 
 ## Frequently Asked Questions 
-# Does it use Yoast SEO breadcrumbs 
+# Does it use Yoast SEO breadcrumb?s 
 Yes. If they're Enabled.
 
 
@@ -28,6 +28,9 @@ Yes. If they're Enabled.
 1. breadcrumbs block
 
 ## Upgrade Notice 
+# 0.5.1 
+Update for improved documentation.
+
 # 0.5.0 
 Now internationalized. Supported languages are US English, UK English ( 'en_GB' locale ) and bbboing language ( 'bb_BB' locale )
 
@@ -35,6 +38,10 @@ Now internationalized. Supported languages are US English, UK English ( 'en_GB' 
 Use the breadcrumbs block (sb/breadcrumbs-block) from the SB breadcrumbs block plugin when you need to show links to all the current posts' ancestors.
 
 ## Changelog 
+# 0.5.1 
+* Changed: Improved internationalization strings, https://github.com/bobbingwide/sb-breadcrumbs-block/issues/1
+* Tested: With WordPress 5.5-RC1
+
 # 0.5.0 
 * Added: Uses Yoast SEO breadcrumbs if enabled, https://github.com/bobbingwide/sb-breadcrumbs-block/issues/2
 * Changed: Internationalised. Localised into UK English and bbboing language, https://github.com/bobbingwide/sb-breadcrumbs-block/issues/1
@@ -59,7 +66,17 @@ Press Ctrl-C to to stop process.
 
 The routine should terminate when the build is complete.
 
-* Note: The scripts don't yet support internationalization.
+- To build the main file for translation
+
+`npm run makepot`
+
+- To perform automatic localization to UK English ( en_GB )  and bbboing ( bb_BB )  locales
+
+`npm run l10n`
+
+- To create the block editor language files after translation
+
+`npm run makejson`
 
 Pre-requisite:
 
