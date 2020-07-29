@@ -43,11 +43,21 @@ registerBlockType( 'sb/breadcrumbs-block', {
 	 * This is a short description for your block, can be translated with `i18n` functions.
 	 * It will be shown in the Block Tab in the Settings Sidebar.
 	 */
-	description: __( 'Show breadcrumbs of the current content as a link.', 'sb-breadcrumbs-block' ),
+	description: __( 'Show breadcrumb links to the current content.', 'sb-breadcrumbs-block' ),
 
 	/**
 	 * Blocks are grouped into categories to help users browse and discover them.
 	 * The categories provided by core are `common`, `embed`, `formatting`, `layout` and `widgets`.
+	 *
+	 * In WordPress 5.5 some of the categories have changed:
+	 * Replace | With
+	 * ------ | -----
+	 * Common | Text
+	 * Formatting | Text
+	 * layout | Design
+	 *
+	 * Widgets, Embeds and Reusable blocks will remain the same.
+	 * There's a new category: Media
 	 */
 	category: 'widgets',
 
@@ -55,7 +65,13 @@ registerBlockType( 'sb/breadcrumbs-block', {
 	 * An icon property should be specified to make it easier to identify a block.
 	 * These can be any of WordPress’ Dashicons, or a custom svg element.
 	 */
-	icon: 'link',
+	icon: 'arrow-right-alt2',
+
+	keywords: [
+		__( 'Breadcrumbs', 'sb-breadcrumbs-block' ),
+		__( 'Trail', 'sb-breadcrumbs-block' ),
+		__( 'Ancestors', 'sb-breadcrumbs-block' ),
+	],
 
 	/**
 	 * Optional block extended support features.

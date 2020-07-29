@@ -3,8 +3,6 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { __ } from '@wordpress/i18n';
-
 import { ServerSideRender } from '@wordpress/editor';
 import { Fragment} from '@wordpress/element';
 //import { InspectorControls } from '@wordpress/block-editor';
@@ -30,9 +28,7 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function edit ( { attributes, className, isSelected, setAttributes } )   {
-	const color = __( 'color', 'sb-breadcrumbs-block');
-	var col = color;
-	return (
+		return (
 		<Fragment>
 			<ServerSideRender
 				block="sb/breadcrumbs-block" attributes={attributes}
