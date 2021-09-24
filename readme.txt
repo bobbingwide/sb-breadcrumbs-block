@@ -1,9 +1,9 @@
 === SB Breadcrumbs block ===
 Contributors:      bobbingwide
-Tags:              block, breadcrumbs, link, Yoast
+Tags:              block, breadcrumbs, link, Yoast, Genesis
 Requires at least: 5.4.2
-Tested up to:      5.7.1
-Stable tag:        0.5.3
+Tested up to:      5.8.1
+Stable tag:        0.6.0
 Requires PHP:      7.2.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,7 @@ Use the Breadcrumbs block ( sb/breadcrumbs-block ) to display links to the curre
 1. Activate the plugin through the 'Plugins' screen in WordPress
 
 == Frequently Asked Questions ==
+
 = Does it use Yoast SEO breadcrumbs? =
 Yes. If they're Enabled. But only on the front end.
 
@@ -30,9 +31,11 @@ And also, only on the front end.
 1. breadcrumbs block
 
 == Upgrade Notice ==
+= 0.6.0 = 
+Upgrade for an internationalized and localized version.
+
 = 0.5.3 = 
 May fix a problem with WSOD when Jetpack also active?
-
 
 = 0.5.2 =
 Update for support for Genesis breadcrumbs.
@@ -47,12 +50,19 @@ Now internationalized. Supported languages are US English, UK English ( 'en_GB' 
 Use the breadcrumbs block (sb/breadcrumbs-block) from the SB breadcrumbs block plugin when you need to show links to all the current posts' ancestors.
 
 == Changelog ==
+= 0.6.0 = 
+* Changed: Block is registered using block.json apiVersion:2 #7
+* Changed: Internationalized and localized. #7
+* Tested: With WordPress 5.8.1
+* Tested: With Gutenberg 11.5.1
+* Tested: With PHP 8.0
+* Tested: With Yoast-SEO 17.2
+
 = 0.5.3 = 
 * Changed: Updated build.
 
 = 0.5.2 =
 * Changed: Add support for Genesis Breadcrumbs - front end only, [github bobbingwide sb-breadcrumbs-block issues 3]
-
 
 = 0.5.1 =
 * Changed: Improved internationalization strings, [github bobbingwide sb-breadcrumbs-block issues 1]
