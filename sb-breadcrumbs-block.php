@@ -3,7 +3,7 @@
  * Plugin Name:     SB Breadcrumbs block
  * Plugin URI: 		https://www.oik-plugins.com/oik-plugins/sb-breadcrumbs-block
  * Description:     Show breadcrumbs to the current content as links
- * Version:         0.5.1
+ * Version:         0.6.0
  * Author:          bobbingwide
  * Author URI: 		https://www.bobbingwide.com/about-bobbing-wide
  * License:         GPL-2.0-or-later
@@ -22,53 +22,19 @@
  */
 function sb_breadcrumbs_block_block_init() {
 	$dir = dirname( __FILE__ );
-
-	$script_asset_path = "$dir/build/index.asset.php";
-	if ( ! file_exists( $script_asset_path ) ) {
-		throw new Error(
-			'You need to run `npm start` or `npm run build` for the "sb/breadcrumbs-block" block first.'
-		);
-	}
-	$index_js     = 'build/index.js';
-	$script_asset = require( $script_asset_path );
-	wp_register_script(
-		'sb-breadcrumbs-block-block-editor',
-		plugins_url( $index_js, __FILE__ ),
-		$script_asset['dependencies'],
-		$script_asset['version']
-	);
-
-	/*
+	load_plugin_textdomain( 'sb-breadcrumbs-block', false, 'sb-breadcrumbs-block/languages' );
+	$args = [ 'render_callback' => 'sb_breadcrumbs_block_dynamic_block'];
+	register_block_type_from_metadata( __DIR__, $args );
+	/**
 	 * Localise the script by loading the required strings for the build/index.js file
-	 * from the locale specific .json file in the languages folder
+	 * from the locale specific .json file in the languages folder.
+	 * oik-sb/sb-starting-block
 	 */
-	$ok = wp_set_script_translations( 'sb-breadcrumbs-block-block-editor', 'sb-breadcrumbs-block' , $dir .'/languages'  );
+	$ok = wp_set_script_translations( 'sb-breadcrumbs-block-editor-script', 'sb-breadcrumbs-block' , __DIR__ .'/languages' );
+	//bw_trace2( $ok, "OK?");
+	//add_filter( 'load_script_textdomain_relative_path', 'oik_sb_sb_starting_block_load_script_textdomain_relative_path', 10, 2);
 
-	$editor_css = 'build/index.css';
-	wp_register_style(
-		'sb-breadcrumbs-block-block-editor',
-		plugins_url( $editor_css, __FILE__ ),
-		array(),
-		filemtime( "$dir/$editor_css" )
-	);
 
-	$style_css = 'build/style-index.css';
-	wp_register_style(
-		'sb-breadcrumbs-block-block',
-		plugins_url( $style_css, __FILE__ ),
-		array(),
-		filemtime( "$dir/$style_css" )
-	);
-
-	register_block_type( 'sb/breadcrumbs-block', array(
-		'editor_script' => 'sb-breadcrumbs-block-block-editor',
-		'editor_style'  => 'sb-breadcrumbs-block-block-editor',
-		'style'         => 'sb-breadcrumbs-block-block',
-		'render_callback'=>'sb_breadcrumbs_block_dynamic_block',
-		'attributes' => [
-			'className' => [ 'type' => 'string'],
-		]
-	) );
 
 }
 add_action( 'init', 'sb_breadcrumbs_block_block_init' );
@@ -88,7 +54,7 @@ add_action( 'init', 'sb_breadcrumbs_block_block_init' );
  * @return string|null
  */
 function sb_breadcrumbs_block_dynamic_block( $attributes ) {
-	load_plugin_textdomain( 'sb-breadcrumbs-block', false, 'sb-breadcrumbs-block/languages' );
+	//load_plugin_textdomain( 'sb-breadcrumbs-block', false, 'sb-breadcrumbs-block/languages' );
 	$html = null;
 
 	if ( defined('REST_REQUEST') && REST_REQUEST ) {
@@ -109,6 +75,13 @@ function sb_breadcrumbs_block_dynamic_block( $attributes ) {
 	if ( !$html ) {
 		$html = sb_breadcrumbs_block_dynamic_block_internal( $attributes );
 	}
+
+	$classes = '';
+	if ( isset( $attributes['textAlign'] ) ) {
+		$classes .= 'has-text-align-' . $attributes['textAlign'];
+	}
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes ) );
+	$html = sprintf( '<div %1$s>%2$s</div>', $wrapper_attributes, $html );
 	return $html;
 }
 
