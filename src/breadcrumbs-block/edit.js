@@ -1,12 +1,12 @@
+import classnames from 'classnames';
+import ServerSideRender from '@wordpress/server-side-render';
 /**
- * Retrieves the translation of text.
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
  *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { ServerSideRender } from '@wordpress/editor';
-import { Fragment} from '@wordpress/element';
-//import { InspectorControls } from '@wordpress/block-editor';
-//import { TextControl, PanelBody } from '@wordpress/components'
+import { useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -22,17 +22,20 @@ import './editor.scss';
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  *
- * @param {Object} [props]           Properties passed from the editor.
- * @param {string} [props.className] Class name generated for the block.
- *
  * @return {WPElement} Element to render.
  */
-export default function edit ( { attributes, className, isSelected, setAttributes } )   {
-		return (
-		<Fragment>
+export default function Edit ( { attributes, className, isSelected, setAttributes } ) {
+	const { textAlign } = attributes;
+	const blockProps = useBlockProps( {
+		className: classnames( {
+			[ `has-text-align-${ textAlign }` ]: textAlign,
+		} ),
+	} );
+	return (
+		<div { ...blockProps}>
 			<ServerSideRender
 				block="sb/breadcrumbs-block" attributes={attributes}
 			/>
-		</Fragment>
+		</div>
 	);
 }
