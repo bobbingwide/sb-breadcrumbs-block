@@ -1,12 +1,19 @@
 {
+  "apiVersion": 2,
 	"name": "sb/breadcrumbs-block",
 	"title": "Breadcrumbs block",
 	"category": "widgets",
 	"icon": "arrow-right-alt2",
 	"description": "Show breadcrumb links to the current content.",
+  "keywords": [ "Breadcrumbs", "Trail", "Ancestors" ],
 	"textdomain": "sb-breadcrumbs-block",
 	"supports": {
 		"html": false
+	},
+  	"attributes": {
+	  "className": {
+		"type": "string"
+	  }
 	},
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
