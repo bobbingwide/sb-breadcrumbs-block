@@ -2,16 +2,16 @@
 Contributors:      bobbingwide
 Tags:              block, breadcrumbs, link, Yoast
 Requires at least: 5.4.2
-Tested up to:      5.4.2
-Stable tag:        0.5.0
+Tested up to:      5.7.1
+Stable tag:        0.5.3
 Requires PHP:      7.2.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Show Breadcrumb links to the current content.
+Show breadcrumb links to the current content.
 
 == Description ==
-Use the Breadcrumbs block ( sb/breadcrumbs-block ) to display links to the current content as a breadcrumb trail.
+Use the Breadcrumbs block ( sb/breadcrumbs-block ) to display links to the current content in a breadcrumb trail.
 
 == Installation ==
 
@@ -19,22 +19,46 @@ Use the Breadcrumbs block ( sb/breadcrumbs-block ) to display links to the curre
 1. Activate the plugin through the 'Plugins' screen in WordPress
 
 == Frequently Asked Questions ==
-= Does it use Yoast SEO breadcrumbs =
-Yes. If they're Enabled.
+= Does it use Yoast SEO breadcrumbs? =
+Yes. If they're Enabled. But only on the front end.
 
+= Does it use Genesis breadcrumbs? =
+Yes. If available and breadcrumbs have not already been created using Yoast breadcrumbs.
+And also, only on the front end.
 
 == Screenshots ==
 1. breadcrumbs block
 
 == Upgrade Notice ==
-= 0.5.0 = 
-Now internationalized. Supported languages are US English, UK English ( 'en_GB' locale ) and bbboing language ( 'bb_BB' locale )  
+= 0.5.3 = 
+May fix a problem with WSOD when Jetpack also active?
+
+
+= 0.5.2 =
+Update for support for Genesis breadcrumbs.
+
+= 0.5.1 =
+Update for improved documentation.
+
+= 0.5.0 =
+Now internationalized. Supported languages are US English, UK English ( 'en_GB' locale ) and bbboing language ( 'bb_BB' locale )
 
 = 0.4.0 =
 Use the breadcrumbs block (sb/breadcrumbs-block) from the SB breadcrumbs block plugin when you need to show links to all the current posts' ancestors.
 
 == Changelog ==
-= 0.5.0 = 
+= 0.5.3 = 
+* Changed: Updated build.
+
+= 0.5.2 =
+* Changed: Add support for Genesis Breadcrumbs - front end only, [github bobbingwide sb-breadcrumbs-block issues 3]
+
+
+= 0.5.1 =
+* Changed: Improved internationalization strings, [github bobbingwide sb-breadcrumbs-block issues 1]
+* Tested: With WordPress 5.5-RC1
+
+= 0.5.0 =
 * Added: Uses Yoast SEO breadcrumbs if enabled, [github bobbingwide sb-breadcrumbs-block issues 2]
 * Changed: Internationalised. Localised into UK English and bbboing language, [github bobbingwide sb-breadcrumbs-block issues 1]
 * Tested: With WordPress 5.4.2 and WordPress Multi Site
@@ -45,6 +69,7 @@ Use the breadcrumbs block (sb/breadcrumbs-block) from the SB breadcrumbs block p
 * Changed: Copied and cobbled from SB Parent block plugin.
 
 == Build process ==
+Only necessary if you want to build the block yourself.
 
 - To build the block during development.
 
@@ -58,7 +83,17 @@ Press Ctrl-C to to stop process.
 
 The routine should terminate when the build is complete.
 
-Note: The scripts don't yet support internationalization.
+- To build the main file for translation
+
+`npm run makepot`
+
+- To perform automatic localization to UK English ( en_GB ) and bbboing ( bb_BB ) locales.
+
+`npm run l10n`
+
+- To create the block editor language files after translation
+
+`npm run makejson`
 
 Pre-requisite:
 
