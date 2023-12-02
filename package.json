@@ -1,9 +1,13 @@
 {
 	"name": "sb-breadcrumbs-block",
-	"version": "0.4.0",
+	"version": "0.6.1",
 	"description": "Display breadcrumb trail",
 	"author": "bobbingwide",
 	"license": "GPL-2.0-or-later",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/bobbingwide/sb-breadcrumbs-block.git"
+	},
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build",
@@ -18,10 +22,10 @@
 		"l10n": "l10n sb-breadcrumbs-block"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^18.0.1"
+		"@wordpress/scripts": "^26.18.0"
 	},
 	"dependencies": {
-		"@wordpress/create-block": "^2.5.1",
-		"@wordpress/server-side-render": "^3.0.2"
+		"@wordpress/create-block": "^4.31.0",
+		"@wordpress/server-side-render": "^4.24.0"
 	}
 }
