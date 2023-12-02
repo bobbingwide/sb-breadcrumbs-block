@@ -25,7 +25,6 @@
 		"@wordpress/scripts": "^26.18.0"
 	},
 	"dependencies": {
-		"@wordpress/create-block": "^4.31.0",
 		"@wordpress/server-side-render": "^4.24.0"
 	}
 }
