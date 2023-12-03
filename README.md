@@ -3,8 +3,8 @@
 * Contributors:      bobbingwide
 * Tags:              block, breadcrumbs, link, Yoast, Genesis
 * Requires at least: 5.4.2
-* Tested up to:      5.8.1
-* Stable tag:        0.6.0
+* Tested up to:      6.4.1
+* Stable tag:        0.6.1
 * Requires PHP:      7.2.0
 * License:           GPL-2.0-or-later
 * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,10 +28,17 @@ Yes. If they're Enabled. But only on the front end.
 Yes. If available and breadcrumbs have not already been created using Yoast breadcrumbs.
 And also, only on the front end.
 
+# Why doesn't Gutenberg provide a breadcrumbs block? 
+See the feature request
+https://github.com/WordPress/gutenberg/issues/21943
+
 ## Screenshots 
 1. breadcrumbs block
 
 ## Upgrade Notice 
+# 0.6.1 
+Update for support for PHP 8.1 and PHP 8.2
+
 # 0.6.0 
 Upgrade for an internationalized and localized version.
 
@@ -51,6 +58,13 @@ Now internationalized. Supported languages are US English, UK English ( 'en_GB' 
 Use the breadcrumbs block (sb/breadcrumbs-block) from the SB breadcrumbs block plugin when you need to show links to all the current posts' ancestors.
 
 ## Changelog 
+# 0.6.1 
+* Changed: Support PHP 8.1 and PHP 8.2 #8
+* Tested: With WordPress 6.4.1 and WordPress Multisite
+* Tested: With Gutenberg 17.1.4
+* Tested: With PHP 8.1 and PHP 8.2
+* Tested: With Yoast-SEO 21.6
+
 # 0.6.0 
 * Changed: Block is registered using block.json apiVersion:2 #7
 * Changed: Internationalized and localized. #7

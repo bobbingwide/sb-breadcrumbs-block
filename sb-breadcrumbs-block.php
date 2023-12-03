@@ -3,7 +3,7 @@
  * Plugin Name:     SB Breadcrumbs block
  * Plugin URI: 		https://www.oik-plugins.com/oik-plugins/sb-breadcrumbs-block
  * Description:     Show breadcrumbs to the current content as links
- * Version:         0.6.0
+ * Version:         0.6.1
  * Author:          bobbingwide
  * Author URI: 		https://www.bobbingwide.com/about-bobbing-wide
  * License:         GPL-2.0-or-later
